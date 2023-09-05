@@ -1,27 +1,22 @@
 package light
 
-// Check is a function that takes a string representing the environment light intensity
+// Check if a function that takes an int representing the environment light intensity
 // and returns a string with a message indicating the energy consumption level of the bicycle lights
-func Check(envLight string) string {
-	// Declare a variable to store the message
+func Check(envLight int) string {
 	var msg string
 
-	// Use a switch statement to check the value of envLight
 	switch envLight {
-	// If envLight is "intensive", set msg to "Bright environment ☀️ \n No energy consumption"
-	case "intensive":
+	case 5:
 		msg = "Bright environment ☀️ \nNo energy consumption 🔋"
-	case "medium":
+	case 4:
 		msg = "Moderate brightness environment 🌥️ \nMedium energy consumption 💡⚡"
-	case "dark":
+	case 3:
 		msg = "Dark environment 🌃 \nHigh energy consumption 🔦⚡⚡"
-	case "ultra-dark":
+	case 2, 1:
 		msg = "Extremely dark environment 🦇\nMaximum energy consumption 🔦🔦⚡⚡⚡"
-	// If envLight is anything else, set msg to "Invalid input"
 	default:
-		msg = "Invalid light environment info"
+		msg = "Invalid light environment information ⚠️"
 	}
 
-	// Return msg as the output of the function
 	return msg
 }

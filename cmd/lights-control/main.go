@@ -3,19 +3,34 @@ package main
 import (
 	"fmt"
 	"golang-bicycle-lights/cmd/lights-control/pkg/light"
+	"strconv"
 )
 
 func main() {
-	// Assume that we have some way to measure the environment light intensity
-	// For simplicity, we will use a variable with a fixed value
-	// We will later replace this without own logic to get the actual value
-	envLight := "intensive"
-	envLight = "medium"
-	envLight = "dark"
-	envLight = "ultra-dark"
 
-	// Call the light.Check function from the light package
-	// Pass the envLight variable as an argument
-	// Print the returned message to the standard output
-	fmt.Println(light.Check(envLight))
+	for {
+		// Call the readInput function and assign its return value to envLight
+		envLight := readInput()
+
+		// Check if the user entered 0 which means to exit
+		if envLight == "0" {
+			fmt.Println("Thanks for using our program! :) Exiting.")
+			break // Break out of the loop and end the program
+		}
+
+		// Convert the envLight string value to an int value using strconv.Atoi
+		// Handle any error that may occur
+		envLightInt, err := strconv.Atoi(envLight)
+		if err != nil {
+			fmt.Println("An error occurred while converting input. Please try again.", err)
+			return
+		}
+
+		// Call the light.Check function from the light package
+		// Pass the envLight variable as an argument
+		// Print the returned message to the standard output
+		fmt.Println(light.Check(envLightInt))
+		//fmt.Println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")
+		fmt.Println("🚲")
+	}
 }
