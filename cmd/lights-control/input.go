@@ -10,7 +10,7 @@ func readInput() string {
 	var input string
 
 	// Print a message to ask the user to enter a number from 1 to 5
-	fmt.Println("Receiving information about the light... This is a basic concept demonstration, please type out the intensity of the light in the environment. Write out a single number from 1 to 5, with 5 being the brightest and 1 being the dimmest. Push 0 to exit")
+	fmt.Println("Receiving information about the light... This is a basic concept demonstration, please type out the intensity of the light in the environment. Write out a single number from 1 to 5, with 5 being the brightest and 1 being the dimmest. Type \"exit\" to exit")
 
 	// Use fmt.Scanln to read a line of text from the standard input
 	// Store it in the input variable
