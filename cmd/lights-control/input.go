@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func readInput() string {
@@ -18,7 +17,7 @@ func readInput() string {
 	_, err := fmt.Scanln(&input)
 	if err != nil {
 		fmt.Println("An error occurred while reading input. Please try again.", err)
-		os.Exit(1) // Exit the program with a non-zero status code
+		panic(err)
 	}
 
 	// Return the input as the output of the function

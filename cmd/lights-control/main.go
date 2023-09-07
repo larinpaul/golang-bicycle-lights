@@ -7,7 +7,9 @@ import (
 
 func main() {
 
-	for {
+	running := true
+
+	for running {
 		// Call the readInput function and assign its return value to envLight
 		envLight := readInput()
 
@@ -17,7 +19,6 @@ func main() {
 		}
 
 		fmt.Println(light.Check(envLight))
-		//fmt.Println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")
 		fmt.Println("🚲")
 	}
 }
