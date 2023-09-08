@@ -1,6 +1,6 @@
 package light
 
-type EnvLight int // Define an enumeration type for environment light intensity
+//type EnvLight int // Define an enumeration type for environment light intensity
 //
 //const (
 //	ExtremelyDark EnvLight = iota // Assign values starting from zero
