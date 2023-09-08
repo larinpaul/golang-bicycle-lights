@@ -1,5 +1,15 @@
 package light
 
+type EnvLight int // Define an enumeration type for environment light intensity
+//
+//const (
+//	ExtremelyDark EnvLight = iota // Assign values starting from zero
+//	VeryDark
+//	Dark
+//	ModerateBrightness
+//	Bright
+//)
+
 // Check if a function that takes an int representing the environment light intensity
 // and returns a string with a message indicating the energy consumption level of the bicycle lights
 func Check(envLight string) string {

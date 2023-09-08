@@ -7,6 +7,13 @@ import (
 
 func main() {
 
+	defer func() { // Declare a deferred function that will run after main returtns
+		if r := recover(); r != nil { // check if there was a panic
+			fmt.Println("An error occurred while reading input. Please try again.", r) // Print a friendly error message
+			main()                                                                     // Call main again to restart the program
+		}
+	}()
+
 	running := true
 
 	for running {
@@ -15,7 +22,7 @@ func main() {
 
 		if envLight == "exit" {
 			fmt.Println("Thanks for using our program! :) Exiting.")
-			break
+			running = false
 		}
 
 		fmt.Println(light.Check(envLight))
