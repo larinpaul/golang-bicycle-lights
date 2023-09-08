@@ -20,7 +20,7 @@ func main() {
 		// Call the readInput function and assign its return value to envLight
 		envLight := readInput()
 
-		if envLight == "exit" {
+		if envLight == -1 {
 			fmt.Println("Thanks for using our program! :) Exiting.")
 			running = false
 		}

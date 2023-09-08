@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"golang-bicycle-lights/cmd/lights-control/pkg/light"
+	"strconv"
 )
 
-func readInput() string {
+func readInput() light.EnvLight {
 	// Declare a variable to store the user input
 	var input string
 
@@ -16,10 +18,22 @@ func readInput() string {
 	// Handle any error that may occur
 	_, err := fmt.Scanln(&input)
 	if err != nil {
-		fmt.Println("An error occurred while reading input. Please try again.", err)
 		panic(err)
 	}
 
+	if input == "exit" {
+		return -1 // Return -1 to indicate exit
+	}
+
+	// Convert the input from a string to an integer
+	num, err := strconv.Atoi(input)
+	if err != nil {
+		panic(err)
+	}
+
+	// Convert the integer to an EnvLight value
+	envLight := light.EnvLight(num - 1) // Subtract 1 because EnvLight values start from zero
+
 	// Return the input as the output of the function
-	return input
+	return envLight
 }
